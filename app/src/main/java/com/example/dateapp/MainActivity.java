@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         //get current Epoch timestamp
         Long tsLong = System.currentTimeMillis()/1000;
         String ts = tsLong.toString();
+
+        //Another way of doing it (without dividing by 1000)
+        //String ts = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
 
         //create reference to text view
         TextView timestamp = findViewById(R.id.text_view_timestamp);
